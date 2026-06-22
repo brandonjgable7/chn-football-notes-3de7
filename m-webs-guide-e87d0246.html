@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>leisu · 站点说明与能力摘要</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background-color: #f5f7fa;
+            color: #1f2937;
+            line-height: 1.7;
+        }
+
+        /* 深色头图 */
+        .hero {
+            background: linear-gradient(135deg, #0b1a2e 0%, #1f2e44 100%);
+            color: #e6edf5;
+            padding: 4rem 2rem 3rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.6rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            margin-bottom: 0.75rem;
+        }
+
+        .hero .sub {
+            max-width: 640px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            opacity: 0.85;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            padding-top: 1.2rem;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2.5rem 2rem 4rem;
+        }
+
+        /* 卡片风格 – 浅色正文区 */
+        .card-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        @media (min-width: 640px) {
+            .card-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 1.8rem 1.8rem 2rem;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03), 0 1px 4px rgba(0, 0, 0, 0.04);
+            transition: transform 0.1s ease, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+        }
+
+        .card h2 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 0.9rem;
+            color: #111827;
+            border-left: 4px solid #2563eb;
+            padding-left: 0.75rem;
+        }
+
+        .card p {
+            margin-bottom: 0.6rem;
+            color: #374151;
+        }
+
+        .card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0.6rem 0 0.2rem;
+        }
+
+        .card li {
+            padding: 0.25rem 0 0.25rem 1.2rem;
+            position: relative;
+        }
+
+        .card li::before {
+            content: "·";
+            position: absolute;
+            left: 0.2rem;
+            color: #2563eb;
+            font-weight: 700;
+        }
+
+        .highlight-link {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px dashed #93b4f8;
+            transition: border-bottom 0.2s, color 0.15s;
+        }
+
+        .highlight-link:hover {
+            color: #1d4ed8;
+            border-bottom: 1px solid #1d4ed8;
+        }
+
+        .btn-soft {
+            display: inline-block;
+            background: #eef2ff;
+            color: #1e3a8a;
+            padding: 0.5rem 1.2rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: background 0.2s;
+            border: 1px solid transparent;
+        }
+
+        .btn-soft:hover {
+            background: #dbe5ff;
+            border-color: #b3c9ff;
+        }
+
+        .faq-item {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 1.2rem 1.6rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.02);
+        }
+
+        .faq-item strong {
+            display: block;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 0.2rem;
+        }
+
+        .faq-item p {
+            margin: 0.2rem 0 0;
+            color: #4b5563;
+            font-size: 0.95rem;
+        }
+
+        .footer-note {
+            margin-top: 3rem;
+            padding-top: 1.8rem;
+            border-top: 1px solid #d1d9e6;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #6b7280;
+        }
+
+        .footer-note a {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .footer-note a:hover {
+            text-decoration: underline;
+        }
+
+        .badge-tip {
+            background: #dbeafe;
+            color: #1e40af;
+            padding: 0.1rem 0.6rem;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            display: inline-block;
+            margin-right: 0.3rem;
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .container {
+                padding: 1.5rem 1.2rem 3rem;
+            }
+            .card {
+                padding: 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 深色头图 -->
+    <header class="hero">
+        <h1>leisu · 功能概览</h1>
+        <p class="sub">面向信息整合与轻量化交互的站点，这里归纳了它的设计思路、适用场景与使用方式</p>
+    </header>
+
+    <!-- 浅色正文区 -->
+    <main class="container">
+
+        <!-- 介绍 + 可信说明 -->
+        <div style="margin-bottom: 2.2rem;">
+            <p style="font-size: 1.05rem; margin-bottom: 0.4rem;">
+                <span class="badge-tip">站点性质</span> 
+                <strong>leisu</strong> 是一个以实用为导向的 Web 服务，致力于提供结构化的内容聚合与简洁的浏览体验。
+                它的定位偏向工具型页面，适合需要快速获得信息摘要或轻量引导的场景。
+            </p>
+            <p style="color: #374151; margin-top: 0.8rem;">
+                在了解任何在线服务前，确认其来源与功能边界是必要的。以下从实际使用角度整理了 
+                <a href="https://m-webs-leisu.com" class="highlight-link">leisu</a> 的主要特点、常见用途以及几条克制的使用提示。
+            </p>
+        </div>
+
+        <!-- 卡片区：亮点 + 使用建议 -->
+        <div class="card-grid">
+            <div class="card">
+                <h2>亮点摘要</h2>
+                <ul>
+                    <li>内容模块清晰，减少不必要的信息干扰</li>
+                    <li>适配不同屏幕尺寸，移动端与桌面均保持可读性</li>
+                    <li>导航逻辑直接，减少多层跳转的认知负担</li>
+                    <li>页面加载轻量，不依赖复杂外部资源</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h2>使用建议</h2>
+                <ul>
+                    <li>作为信息索引页使用时，可先通览标题区块再深入</li>
+                    <li>若需频繁参考，建议添加书签以快速返回</li>
+                    <li>留意页面版本迭代，功能或布局可能微调</li>
+                    <li>遇到不确定的内容，建议结合其他可靠来源对照</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 场景说明 单列卡片 -->
+        <div style="margin: 1.8rem 0 2.2rem;">
+            <div class="card" style="max-width: 100%;">
+                <h2>典型场景</h2>
+                <p>以下情境中使用 <a href="https://m-webs-leisu.com" class="highlight-link">leisu</a> 会相对顺畅：</p>
+                <ul style="display: flex; flex-wrap: wrap; gap: 0.6rem 2rem; margin-top: 0.6rem;">
+                    <li style="width: calc(50% - 1rem); min-width: 160px;">快速查阅分类信息</li>
+                    <li style="width: calc(50% - 1rem); min-width: 160px;">作为轻量级导航起点</li>
+                    <li style="width: calc(50% - 1rem); min-width: 160px;">测试或演示静态页面结构</li>
+                    <li style="width: calc(50% - 1rem); min-width: 160px;">内容聚合与初步筛选</li>
+                </ul>
+                <p style="margin-top: 0.8rem; font-size: 0.95rem; color: #4b5563;">
+                    每个场景下，建议根据自身需要调整使用频率 —— 站点本身不进行主动推送或个性化追踪。
+                </p>
+            </div>
+        </div>
+
+        <!-- FAQ 摘要 -->
+        <div style="margin-top: 0.8rem;">
+            <h2 style="font-size: 1.3rem; font-weight: 600; margin-bottom: 1rem; color: #1f2937;">常见疑问摘要</h2>
+
+            <div class="faq-item">
+                <strong>这个站点是否需要注册或登录？</strong>
+                <p>目前 <a href="https://m-webs-leisu.com" class="highlight-link">leisu</a> 以公开内容为主，无需注册即可浏览主要页面。部分交互功能可能默认开放。</p>
+            </div>
+
+            <div class="faq-item">
+                <strong>内容多久更新一次？</strong>
+                <p>更新节奏不固定，以实际维护情况为准。建议定期访问以获取最新排列，但不必频繁刷新。</p>
+            </div>
+
+            <div class="faq-item">
+                <strong>使用过程中需要注意什么？</strong>
+                <p>作为普通信息页面，它不替代专业数据库或官方通知。请合理评估内容适用性，并对个人设备及网络环境保持常规安全意识。</p>
+            </div>
+
+            <div style="text-align: right; margin-top: 0.8rem;">
+                <a href="https://m-webs-leisu.com" class="btn-soft">leisu</a>
+            </div>
+        </div>
+
+        <!-- 可信但克制的访问说明 -->
+        <div style="background: #f0f4fe; border-radius: 20px; padding: 1.5rem 1.8rem; margin: 2.2rem 0 1.2rem;">
+            <p style="font-weight: 500; color: #1e3a8a; margin-bottom: 0.3rem;">🔍 访问说明</p>
+            <p style="color: #1f2937; font-size: 0.95rem;">
+                本页面指向的站点 <a href="https://m-webs-leisu.com" class="highlight-link">leisu</a> 由独立维护者管理，其内容与功能可能随时间调整。
+                建议在首次使用后自行判断其持续价值。不收集非必要数据，不嵌入第三方追踪脚本，但用户仍应遵守所在地区网络使用规范。
+            </p>
+        </div>
+
+        <footer class="footer-note">
+            <span>基于公开信息整理 · 介绍页仅作说明参考</span><br>
+            <span style="font-size: 0.85rem; display: inline-block; margin-top: 0.2rem;">
+                直接访问 <a href="https://m-webs-leisu.com">leisu</a> 以了解完整内容
+            </span>
+        </footer>
+
+    </main>
+
+</body>
+</html>
